@@ -1,10 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="platePlanner">
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script> 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.js"></script>  
 </head>
 <body>
+    <a href="/">Home</a>
+    <a href="/detailed-info-recipe">Recipe Facts</a>
+    <a href="/filter-by-dietary">Have dietary restrictions?</a>
+    <searchbar></searchbar>
 
+    <div ng-view></div>
+    <script src="components/search-bar/search-bar.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
