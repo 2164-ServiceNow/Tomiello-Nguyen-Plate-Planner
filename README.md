@@ -4,11 +4,14 @@
 
 **Technologies Used:**
 
-*   HTML
-*   CSS
+*   HTML (5)
+*   CSS (3)
+*   Bootstrap (5.3)
 *   JavaScript
-*   AngularJS (Specify Version)
-*   Spoonacular API
+*   Node (23.6.0)
+*   AngularJS (1.8.2)
+*   Spoonacular API - https://spoonacular.com/food-api
+
 
 **User Stories:** 
 
@@ -23,20 +26,19 @@
 
 **Development Environment Setup:**
 
-* Node Set up for Mac
+* **Node Set up for Mac**
 * curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
-* Download and install Node.js: nvm install 23
-* Verify the Node.js version:node -v # Should print "v23.6.0"
+* **Download and install Node.js:** nvm install 23
+* **Verify the Node.js version**:node -v # Should print "v23.6.0"
 
-* Node Set up for Windows
+*  **Node Set up for Windows**
 * Pull the Node.js Docker image:docker pull node:23-alpine
 * Create a Node.js container and start a Shell session:docker run -it --rm --entrypoint sh node:23-alpine
 * Verify the Node.js version:node -v # Should print "v23.6.0"
 
-* How to install Angular
+* **How to install Angular**
 * Run npm install
 
-*   Precise steps to install all project dependencies.
 
 **Collaborators:**
 
