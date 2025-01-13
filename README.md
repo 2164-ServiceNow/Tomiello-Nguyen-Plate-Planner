@@ -1,6 +1,6 @@
 # Project Title: Tomiello-Nguyen-Plate-Planner
 
-**Project Description:**  An application that allows Users to find recipes, plan meals, as well learn more about specifc cuisines
+**Project Description:**  An application that allows Users to find recipes, plan meals, as well learn more about specific cuisines
 
 **Technologies Used:**
 
@@ -10,7 +10,7 @@
 *   AngularJS (Specify Version)
 *   Spoonacular API
 
-**User Stories:** (8 Total - 4 Per Developer)
+**User Stories:** 
 
 1.  As a user, I want to search for recipes based on ingredients so that I can find dishes I can prepare with what I already have.
 2.  As a user, I want to filter recipes by dietary preferences such as vegan, gluten-free, or keto so that I can find recipes suited to my diet.
@@ -23,7 +23,19 @@
 
 **Development Environment Setup:**
 
-*   Detailed instructions for setting up the development environment (e.g., Node.js version, npm/yarn commands, AngularJS CLI commands if applicable).
+* Node Set up for Mac
+* curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+* Download and install Node.js: nvm install 23
+* Verify the Node.js version:node -v # Should print "v23.6.0"
+
+* Node Set up for Windows
+* Pull the Node.js Docker image:docker pull node:23-alpine
+* Create a Node.js container and start a Shell session:docker run -it --rm --entrypoint sh node:23-alpine
+* Verify the Node.js version:node -v # Should print "v23.6.0"
+
+* How to install Angular
+* Run npm install
+
 *   Precise steps to install all project dependencies.
 
 **Collaborators:**
