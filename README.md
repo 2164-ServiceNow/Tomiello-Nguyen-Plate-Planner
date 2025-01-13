@@ -7,9 +7,11 @@
 *   HTML (5)
 *   CSS (3)
 *   Bootstrap (5.3)
-*   JavaScript
+*   JavaScript (ECMAScript6)
 *   Node (23.6.0)
 *   AngularJS (1.8.2)
+*   Min- https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js
+*   Router- https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.js
 *   Spoonacular API - https://spoonacular.com/food-api
 
 
@@ -24,20 +26,6 @@
 7.  As a user, I want to search for recipes that require minimal prep time so that I can cook quick meals.
 8.  As a user, I want to get random recipe suggestions so that I can discover new and exciting meals.
 
-**Development Environment Setup:**
-
-* **Node Set up for Mac**
-* curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
-* **Download and install Node.js:** nvm install 23
-* **Verify the Node.js version**:node -v # Should print "v23.6.0"
-
-*  **Node Set up for Windows**
-* Pull the Node.js Docker image:docker pull node:23-alpine
-* Create a Node.js container and start a Shell session:docker run -it --rm --entrypoint sh node:23-alpine
-* Verify the Node.js version:node -v # Should print "v23.6.0"
-
-* **How to install Angular**
-* Run npm install
 
 
 **Collaborators:**
