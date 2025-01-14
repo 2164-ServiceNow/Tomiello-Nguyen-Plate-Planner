@@ -2,8 +2,24 @@
     <p>Search Results:</p>
     <ul>
         <li ng-repeat="ingredient in ingredients">
-            {{ ingredient.name }}
+            <label>
+                <input type="checkbox" ng-click="toggleIngredientSelection(ingredient)">
+                {{ ingredient.name }}
+            </label>
         </li>
     </ul>
-    <p>hey</p>
+
+    <p>Selected Ingredients:</p>
+    <ul>
+        <li ng-repeat="selectedIngredient in selectedIngredients">
+            {{ selectedIngredient.name }}
+        </li>
+    </ul>
+    <button ng-click="handleGenRecipeClick()">Generate Recipes with these Ingredients</button>
+
+    <ul>
+        <li ng-repeat="recipe in listRecipes">
+            {{ recipe.id }}
+        </li>
+    </ul>
 </div>
