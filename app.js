@@ -2,22 +2,27 @@
 
 angular.module('platePlanner', [
     'ngRoute',
-    'searchBar'
+    'searchBar',
+    'recipeByIngredients'
   ])
   .config(function($locationProvider, $routeProvider) {
     $routeProvider
     .when("/", {
       templateUrl: "pages/home.html"
     })
-    .when("/detailed-info-recipe",{
-        templateUrl: "components/detailed-info-recipe/detailed-info-recipe.html"
+    // .when("/detailedInfoRecipe",{
+    //     templateUrl: "components/detailedInfoRecipe/detailedInfRecipe.html"
+    // })
+    // .when("/filterByDietary",{
+    //     templateUrl: "components/filterByDietary/filterByDietaty.html"
+    // })
+    .when("/recipeByIngredients",{
+        templateUrl: "pages/ingredients.html"
     })
-    .when("/filter-by-dietary",{
-        templateUrl: "components/filter-by-dietary/filter-by-dietaty.html"
-    })
+
     
       $locationProvider.html5Mode({
         enabled:true,
         requireBase:false
   });
-});
+})

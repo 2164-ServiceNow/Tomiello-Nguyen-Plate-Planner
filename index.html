@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="platePlanner">
 <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script> 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-route/1.8.2/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.js"></script>
 </head>
 <body>
     <a href="/">Home</a>
-    <a href="/detailed-info-recipe">Recipe Facts</a>
-    <a href="/filter-by-dietary">Have dietary restrictions?</a>
+    <!-- <a href="/detailedInfoRecipe">Recipe Facts</a>
+    <a href="/filterByDietary">Have dietary restrictions?</a> -->
+    <a href="/recipeByIngredients">Ingredients</a>
+
+
     <searchbar></searchbar>
 
     <div ng-view></div>
-    <script src="components/search-bar/search-bar.js"></script>
+    <script src="components/searchBar/searchBar.js"></script>
     <script src="app.js"></script>
+    <script src="components/recipeByIngredients/recipeByIngredients.js"></script>
+    <script src="pages/ingredients.html"></script>
+    <script src="services/searchBarService.js"></script>
+
 </body>
 </html>
