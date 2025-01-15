@@ -17,9 +17,15 @@
     </ul>
     <button ng-click="handleGenRecipeClick()">Generate Recipes with these Ingredients</button>
 
+    <h2>Recipes:</h2>
+ 
     <ul>
-        <li ng-repeat="recipe in listRecipes">
-            {{ recipe.id }}
+        <li ng-repeat="recipe in recipeInfoList">
+            
+            <h3>
+                <a ng-href="{{ recipe.sourceUrl }}" target="_blank">{{ recipe.title }}</a>
+            </h3>            
+            <img ng-src="{{ recipe.image }}" alt="{{ recipe.title }}" style="width: 100px; height: auto;">
         </li>
     </ul>
 </div>

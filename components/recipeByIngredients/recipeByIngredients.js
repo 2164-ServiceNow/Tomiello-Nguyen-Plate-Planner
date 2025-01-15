@@ -1,4 +1,6 @@
-const apiKey='33c88e383a894f4d837e743a8927115f'
+//const apiKey='d3476fe6c2644d64ba5f7973ed2fb875'
+const apiKey='b7fad37df2234ebdbaadb879ae6c6a61'
+
 
 angular.module('recipeByIngredients', [])
 
@@ -10,6 +12,8 @@ angular.module('recipeByIngredients', [])
         $scope.ingredients = [] 
         $scope.selectedIngredients=[]
         $scope.listRecipes=[]
+        $scope.recipeInfoList = [];
+
         
         $scope.$watch(function () {
                 console.log('Watching for query updates...');
@@ -47,17 +51,58 @@ angular.module('recipeByIngredients', [])
                 $scope.selectedIngredients.push(ingredient);
             }
         };
-        $scope.listRecipes= function (selectedIngredients){
-            let ingredientsList=selectedIngredients.join(',')
-            $http.get(`https://api.spoonacular.com/recipes/findByIngredients?query=${ingredientsList}&apiKey=${apiKey}`) //use this to get ID then give ID to other api for recipe url
-                .then((response) =>{
-                    $scope.listRecipes= response.data
-                    console.log(listRecipes)
+
+
+        let recipeIDs=[]
+
+        $scope.handleGenRecipeClick = function () {
+            $scope.recipeInfoList = [];
+           let ingredientNameList=[]
+           for (let i=0;i<$scope.selectedIngredients.length;i++){
+                ingredientNameList.push($scope.selectedIngredients[i].name)
+            }
+            // Extract the ingredient names and join them into a comma-separated string
+           let ingredientsList=ingredientNameList.join(',')
+
+           
+            // Make the API call to fetch recipes
+            $http.get(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredientsList}&number=5&apiKey=${apiKey}`) //number is hm is displayed
+                .then((response) => {
+                    // Store the recipes in the scope
+                    $scope.listRecipes = response.data;
+                    console.log('Recipes retrieved:', $scope.listRecipes);
+                    $scope.listRecipes.forEach((recipe) => {
+                        let currentID = recipe.id;
+                        $http.get(`https://api.spoonacular.com/recipes/${currentID}/information?includeNutrition=false&apiKey=${apiKey}`) //needs to be in .then so that list recipe is populated
+                            .then((response) => {
+                            $scope.recipeInfoList.push(response.data)
+                            })
                 })
+                .catch((error) => {
+                    console.error('Error fetching recipes:', error);``
+                });
+
+            })
+            
+        };
+        $scope.next = function () {
+            $http.get(`${$scope.recipe.next}`)
+            .then((response) => {
+                $scope.recipeInfoList = response.data;
+            })
         }
-        // $scope.handleGenRecipeClick=function (listRecipes){
-        //     listRecipes
-        // }
+
+        $scope.previous = function () {
+            // $http.get(`https://pokeapi.co/api/v2/pokemon/?offset=${80}&limit=${20}`)
+            $http.get(`${$scope.recipe.previous}`) // SHAME THE TRAINER HE FORGOT TO UPDATE THIS TO PREVIOUS
+            .then((response) => {
+                $scope.recipeInfoList = response.data;
+            })
+        }
+
+
+        
+        
         
 
         //Left off trying to grab ID so that we can give ID to recipeinfo API to get url link for recipe
