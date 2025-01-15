@@ -1,5 +1,6 @@
 //const apiKey='d3476fe6c2644d64ba5f7973ed2fb875'
-const apiKey='b7fad37df2234ebdbaadb879ae6c6a61'
+//const apiKey='b7fad37df2234ebdbaadb879ae6c6a61'
+const apiKey='bf2d548141f94d67bcc99b158ade286a'
 
 
 angular.module('recipeByIngredients', [])
@@ -66,7 +67,8 @@ angular.module('recipeByIngredients', [])
 
            
             // Make the API call to fetch recipes
-            $http.get(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredientsList}&number=5&apiKey=${apiKey}`) //number is hm is displayed
+            
+            $http.get(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredientsList}&number=1&apiKey=${apiKey}`) //number is hm is displayed
                 .then((response) => {
                     // Store the recipes in the scope
                     $scope.listRecipes = response.data;
@@ -85,31 +87,13 @@ angular.module('recipeByIngredients', [])
             })
             
         };
-        $scope.next = function () {
-            $http.get(`${$scope.recipe.next}`)
-            .then((response) => {
-                $scope.recipeInfoList = response.data;
-            })
-        }
-
-        $scope.previous = function () {
-            // $http.get(`https://pokeapi.co/api/v2/pokemon/?offset=${80}&limit=${20}`)
-            $http.get(`${$scope.recipe.previous}`) // SHAME THE TRAINER HE FORGOT TO UPDATE THIS TO PREVIOUS
-            .then((response) => {
-                $scope.recipeInfoList = response.data;
-            })
-        }
-
-
+ 
         
         
         
 
-        //Left off trying to grab ID so that we can give ID to recipeinfo API to get url link for recipe
 
-        //Need to add next and prev so that we can go through all the recipes that we can make with current ingredients
         
     }
 })
 
-// Rem for later    https://api.spoonacular.com/recipes/73420/information?&apiKey=33c88e383a894f4d837e743a8927115f
