@@ -1,9 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+ <!-- 'Gluten Free', 'Ketogenic', 'Vegetarian', 'Lacto-Vegetarian',
+    'Ovo-Vegetarian', 'Vegan', 'Pescetarian', 'Paleo', 'Primal', 'Low FODMAP', 'Whole30' -->
 
-</head>
-<body>
-    <p>filter dietary/p>
-</body>
-</html>
+
+<div>
+    <h1>Filter Recipes by Diet</h1>
+    
+    <!-- Dietary Preferences Dropdown -->
+    <label for="diet">Choose your diet preference:</label>
+    <select id="diet" ng-model="selectedDiet" ng-change="searchRecipes()">
+        <option value="vegan">Vegan</option>
+        <option value="gluten free">Gluten Free</option>
+        <option value="keto">Keto</option>
+        <option value="vegetarian">Vegetarian</option>
+        <option value="paleo">Paleo</option>
+        <option value="whole30">Whole30</option>
+    </select>
+
+    <!-- Display the recipes -->
+    <div ng-if="recipes.length > 0">
+        <ul>
+            <li ng-repeat="recipe in recipes">
+                <h3>{{ recipe.title }}</h3>
+                <img ng-src="{{ recipe.image }}" alt="{{ recipe.title }}">
+                <p>{{ recipe.summary }}</p>
+            </li>
+        </ul>
+    </div>
+</div>

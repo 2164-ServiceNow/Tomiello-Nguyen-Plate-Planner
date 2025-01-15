@@ -3,7 +3,8 @@
 angular.module('platePlanner', [
     'ngRoute',
     'searchBar',
-    'recipeByIngredients'
+    'recipeByIngredients',
+    'filterByDietary'
   ])
   .config(function($locationProvider, $routeProvider) {
     $routeProvider
@@ -13,13 +14,12 @@ angular.module('platePlanner', [
     // .when("/detailedInfoRecipe",{
     //     templateUrl: "components/detailedInfoRecipe/detailedInfRecipe.html"
     // })
-    // .when("/filterByDietary",{
-    //     templateUrl: "components/filterByDietary/filterByDietaty.html"
-    // })
     .when("/recipeByIngredients",{
         templateUrl: "pages/ingredients.html"
     })
-
+    .when("/filterByDietary",{
+        templateUrl: "pages/diet.html"
+    })
     
       $locationProvider.html5Mode({
         enabled:true,
