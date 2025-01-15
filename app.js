@@ -3,7 +3,8 @@
 angular.module('platePlanner', [
     'ngRoute',
     'searchBar',
-    'recipeByIngredients'
+    'recipeByIngredients',
+    'recipeByCusines'
   ])
   .config(function($locationProvider, $routeProvider) {
     $routeProvider
@@ -18,6 +19,9 @@ angular.module('platePlanner', [
     // })
     .when("/recipeByIngredients",{
         templateUrl: "pages/ingredients.html"
+    })
+    .when("/recipeByCusines",{
+        templateUrl : "pages/cusine.html"
     })
 
     
