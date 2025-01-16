@@ -1,0 +1,50 @@
+
+
+<!-- Input form for nutritional goals -->
+    <form ng-submit="searchRecipes()">
+        <!-- Protein -->
+        <label for="minProtein">Min Protein (grams):</label>
+        <input type="number" id="minProtein" ng-model="minProtein" placeholder="Min Protein">
+
+        <!-- Fat -->
+        <label for="maxFat">Max Fat (grams):</label>
+        <input type="number" id="maxFat" ng-model="maxFat" placeholder="Max Fat">
+
+        <!-- Carbs -->
+        <label for="minCarbs">Min Carbs (grams):</label>
+        <input type="number" id="minCarbs" ng-model="minCarbs" placeholder="Min Carbs">
+
+        <!-- Calories -->
+        <label for="maxCalories">Max Calories:</label>
+        <input type="number" id="maxCalories" ng-model="maxCalories" placeholder="Max Calories">
+
+        <!-- Fiber -->
+        <label for="minFiber">Min Fiber (grams):</label>
+        <input type="number" id="minFiber" ng-model="minFiber" placeholder="Min Fiber">
+
+        <!-- Sugar -->
+        <label for="maxSugar">Max Sugar (grams):</label>
+        <input type="number" id="maxSugar" ng-model="maxSugar" placeholder="Max Sugar">
+
+        <!-- Sodium -->
+        <label for="maxSodium">Max Sodium (mg):</label>
+        <input type="number" id="maxSodium" ng-model="maxSodium" placeholder="Max Sodium">
+
+        <!-- Cholesterol -->
+        <label for="maxCholesterol">Max Cholesterol (mg):</label>
+        <input type="number" id="maxCholesterol" ng-model="maxCholesterol" placeholder="Max Cholesterol">
+
+        <button type="submit">Search Recipes</button>
+    </form>
+
+    <!-- Display the recipes -->
+    <div ng-if="recipes.length > 0">
+        <h3>Found Recipes:</h3>
+        <ul>
+            <li ng-repeat="recipe in recipes">
+                <h4>{{ recipe.title }}</h4>
+                <img ng-src="{{ recipe.image }}" alt="{{ recipe.title }}">
+                <p>Protein: {{ recipe.nutrition.protein }}g, Fat: {{ recipe.nutrition.fat }}g, Carbs: {{ recipe.nutrition.carbs }}g, Calories: {{ recipe.nutrition.calories }}</p>
+            </li>
+        </ul>
+    </div>
