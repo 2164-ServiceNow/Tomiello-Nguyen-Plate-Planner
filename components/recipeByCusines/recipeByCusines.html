@@ -25,14 +25,11 @@
 
     <div ng-if="listRecipes.length > 0">
         <h2>Recipes:</h2>
-        <div ng-repeat="recipe in listRecipes" >
-            <h3>{{ recipe.title }}</h3>
-            <img ng-src="{{ recipe.image }}" alt="{{ recipe.title }}" >
-            <p><a ng-href="{{ recipe.sourceUrl }}" target="_blank">View Full Recipe</a></p>
+        <div ng-repeat="recipe in listRecipes">
+            <h3>
+                <a ng-href="{{ recipe.sourceUrl }}" target="_blank">{{ recipe.title }}</a>
+            </h3>        
+            <img ng-src="{{ recipe.image }}" alt="{{ recipe.title }}">
         </div>
-    </div>
-
-    <div ng-if="listRecipes.length === 0 && selectedCuisine !== ''">
-        <p>No recipes found for the selected cuisine.</p>
     </div>
 </div>
