@@ -1,0 +1,22 @@
+<ul>
+    <li ng-repeat="recipe in recipes">
+        <input type="checkbox" ng-model="recipe.selected" ng-change="handleRecipeClick()">
+        <h3>
+            <a ng-href="{{ recipe.sourceUrl }}" target="_blank">{{ recipe.title }}</a>
+        </h3>            
+        <img ng-src="{{ recipe.image }}" alt="{{ recipe.title }}">
+    </li>
+</ul>
+
+
+<div ng-if="shoppingList.length > 0">
+    <h3><u>Shopping List:</u></h3>
+    <ul>
+        <li ng-repeat="ingredient in shoppingList">
+            <h3>{{ ingredient.name }} ({{ ingredient.amount.us.value}} {{ ingredient.amount.us.unit}})
+                : ${{ ingredient.price }}</h3>
+        </li>   
+    </ul>
+    <h3 ng-if="totalCost">Total Cost: ${{ totalCost }}</h3>
+</div>
+
