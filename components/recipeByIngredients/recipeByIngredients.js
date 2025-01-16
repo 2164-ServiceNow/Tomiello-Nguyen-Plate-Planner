@@ -24,7 +24,7 @@ angular.module('recipeByIngredients', [])
                 if (newQuery) {
                     console.log('New query detected:', newQuery);
         
-                    $http.get(`https://api.spoonacular.com/food/ingredients/search?query=${newQuery}&apiKey=${apiKey}`)
+                    $http.get(`https://api.spoonacular.com/food/ingredients/search?query=${newQuery}&addRecipeInformation=true&apiKey=${apiKey}`)
                         .then((response) => {
                             console.log('API response:', response.data);
                             $scope.ingredients = response.data.results; // Ensure accessing 'results'

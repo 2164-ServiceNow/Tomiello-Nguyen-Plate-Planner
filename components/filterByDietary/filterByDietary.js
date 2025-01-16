@@ -8,19 +8,19 @@ angular.module('filterByDietary', [])
     templateUrl: 'components/filterByDietary/filterByDietary.html',
     controller: function($scope, $http, searchBarService){
         
-        // $scope.selectedDiet = 'vegan';  // Default diet preference
-        // $scope.recipes = [];
+        $scope.selectedDiet = 'Vegan';  // Default diet preference
+        $scope.recipes = [];
 
-        // $scope.searchRecipes = function(diet) {
-        //     const dietParam = $scope.selectedDiet;
+        $scope.searchRecipes = function() {
+            const dietParam = $scope.selectedDiet;
 
-        //     $http.get(`https://api.spoonacular.com/recipes/complexSearch?diet=${dietParam}&number=1&apiKey=${apiKey2}`)
-        //         .then((response) => {
-        //             $scope.recipes = response.data.results
-        //         })
-        // };
+            $http.get(`https://api.spoonacular.com/recipes/complexSearch?diet=${dietParam}&number=1&addRecipeInformation=true&apiKey=${apiKey2}`)
+                .then((response) => {
+                    $scope.recipes = response.data.results
+                })
+        };
 
-        // $scope.searchRecipes(); // initial search call
+        $scope.searchRecipes(); // initial search call
 
     }
 })
