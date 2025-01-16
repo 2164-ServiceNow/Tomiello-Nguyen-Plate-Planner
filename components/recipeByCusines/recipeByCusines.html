@@ -1,0 +1,35 @@
+<div>
+    <h1>Select Your Favorite Cuisine</h1>
+    <form ng-submit="handleCuisineSearch()">
+        <label for="cuisines">Choose a cuisine:</label>
+        <select id="cuisines" name="cuisines" ng-model="selectedCuisine">
+            <option value="">-- Select a Cuisine --</option>
+            <option value="mexican">Mexican</option>
+            <option value="italian">Italian</option>
+            <option value="asian">Asian</option>
+            <option value="indian">Indian</option>
+            <option value="american">American</option>
+            <option value="african">African</option>
+            <option value="chinese">Chinese</option>
+            <option value="french">French</option>
+            <option value="german">German</option>
+            <option value="greek">Greek</option>
+            <option value="japanese">Japanese</option>
+            <option value="korean">Korean</option>
+            <option value="mediterranean">Mediterranean</option>
+            <option value="spanish">Spanish</option>
+            <option value="vietnamese">Vietnamese</option>
+        </select>
+        <button type="submit">Search Recipes</button>
+    </form>
+
+    <div ng-if="listRecipes.length > 0">
+        <h2>Recipes:</h2>
+        <div ng-repeat="recipe in listRecipes">
+            <h3>
+                <a ng-href="{{ recipe.sourceUrl }}" target="_blank">{{ recipe.title }}</a>
+            </h3>        
+            <img ng-src="{{ recipe.image }}" alt="{{ recipe.title }}">
+        </div>
+    </div>
+</div>

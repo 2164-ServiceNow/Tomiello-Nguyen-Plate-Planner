@@ -4,7 +4,8 @@ angular.module('platePlanner', [
     'ngRoute',
     'searchBar',
     'recipeByIngredients',
-    'filterByDietary'
+    'filterByDietary',
+    'recipeByCusines'
   ])
   .config(function($locationProvider, $routeProvider) {
     $routeProvider
@@ -20,6 +21,10 @@ angular.module('platePlanner', [
     .when("/filterByDietary",{
         templateUrl: "pages/diet.html"
     })
+    .when("/recipeByCusines",{
+        templateUrl : "pages/cusine.html"
+    })
+
     
       $locationProvider.html5Mode({
         enabled:true,
