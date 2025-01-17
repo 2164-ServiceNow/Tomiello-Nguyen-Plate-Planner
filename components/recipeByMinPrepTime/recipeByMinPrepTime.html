@@ -1,0 +1,26 @@
+<div>
+    <h1>Find Meals by Prep Time</h1>
+
+    <form ng-submit="handleTimeSearch()">
+        <label for="times">Choose a max time:</label>
+        <select id="times" name="times" ng-model="selectedTime">
+            <option value="">-- Select a Time --</option>
+            <option value="15">15</option>
+            <option value="30">30</option>
+            <option value="45">45</option>
+            <option value="60">60</option>
+            <option value="90">90</option>
+            <option value="120">120</option>
+        </select>
+        <button type="submit">Search Recipes</button>
+    </form>
+    <div ng-if="listedRecipes.length > 0">
+        <h2>Recipes:</h2>
+        <div ng-repeat="recipe in listedRecipes">
+            <h3>
+                <a ng-href="{{ recipe.sourceUrl }}" target="_blank">{{ recipe.title }}</a>
+            </h3>        
+            <img ng-src="{{ recipe.image }}" alt="{{ recipe.title }}">
+        </div>
+    </div>
+</div>

@@ -6,7 +6,8 @@ angular.module('platePlanner', [
     'recipeByIngredients',
     'filterByDietary',
     'recipeByCusines',
-    'recipeShoppingList'
+    'recipeShoppingList',
+    'prepTime'
   ])
   .config(function($locationProvider, $routeProvider) {
     $routeProvider
@@ -27,6 +28,9 @@ angular.module('platePlanner', [
     })
     .when("/recipeShoppingList",{
         templateUrl : "pages/shoppingList.html"
+    })
+    .when("/prepTime",{
+        templateUrl : "pages/prepTime.html"
     })
 
     
