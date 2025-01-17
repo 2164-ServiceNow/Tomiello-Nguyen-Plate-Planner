@@ -1,6 +1,6 @@
-const apiKey4='d3476fe6c2644d64ba5f7973ed2fb875'
-//const apiKey6='b7fad37df2234ebdbaadb879ae6c6a61'
-//const apiKey6='bf2d548141f94d67bcc99b158ade286a'
+//const apiKey4='d3476fe6c2644d64ba5f7973ed2fb875'
+const apiKey4='b7fad37df2234ebdbaadb879ae6c6a61'
+//const apiKey4='bf2d548141f94d67bcc99b158ade286a'
 
 angular.module('recipeByNutritionalGoals', [])
 
@@ -11,6 +11,7 @@ angular.module('recipeByNutritionalGoals', [])
         $scope.minProtein = ''
         $scope.maxFat = ''
         $scope.minCarbs = ''
+        $scope.maxCarbs = ''
         $scope.maxCalories = ''
         $scope.minFiber = ''
         $scope.maxSugar = ''
@@ -20,7 +21,6 @@ angular.module('recipeByNutritionalGoals', [])
         $scope.newQuery = ''
 
         $scope.recipes = []
-        $scope.nutritionList = []
 
         $scope.$watch(function () {
             return searchBarService.getQuery()
@@ -34,7 +34,10 @@ angular.module('recipeByNutritionalGoals', [])
         // Function to handle form submission and search for recipes
         $scope.searchRecipes = function() {
             // Construct the API URL with user input
-            let apiUrl = `https://api.spoonacular.com/recipes/complexSearch?query=${$scope.newQuery}&apiKey=${apiKey4}&number=1`;
+            let apiUrl = `https://api.spoonacular.com/recipes/complexSearch?query=${$scope.newQuery}&addRecipeInformation=true&apiKey=${apiKey4}&number=1`;
+
+            // clearing old results
+            $scope.recipes = [];
 
             // Add query parameters based on user input
             if ($scope.minProtein) {
@@ -45,6 +48,9 @@ angular.module('recipeByNutritionalGoals', [])
             }
             if ($scope.minCarbs) {
                 apiUrl += `&minCarbs=${$scope.minCarbs}`
+            }
+            if ($scope.maxCarbs) {
+                apiUrl += `&maxCarbs=${$scope.maxCarbs}`
             }
             if ($scope.maxCalories) {
                 apiUrl += `&maxCalories=${$scope.maxCalories}`
@@ -67,8 +73,9 @@ angular.module('recipeByNutritionalGoals', [])
                 .then(function(response) {
                     // Store the recipes in the scope
                     $scope.recipes = response.data.results
-                    $scope.nutritionList = response.data.results.nutrition
-
+                    if (response.data.results && response.data.results.length === 0) {
+                        console.log('No recipes found in the response data.');
+                    }
                 })                
         }
     }
