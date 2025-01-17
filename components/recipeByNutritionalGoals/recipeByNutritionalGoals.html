@@ -44,7 +44,10 @@
             <li ng-repeat="recipe in recipes">
                 <h4>{{ recipe.title }}</h4>
                 <img ng-src="{{ recipe.image }}" alt="{{ recipe.title }}">
-                <p>Protein: {{ recipe.nutrition.protein }}g, Fat: {{ recipe.nutrition.fat }}g, Carbs: {{ recipe.nutrition.carbs }}g, Calories: {{ recipe.nutrition.calories }}</p>
+                <li ng-repeat="nutrients in nutritionList">
+                    <p>Protein: {{ recipe.nutrition.protein }}g, Fat: {{ recipe.nutrition.fat }}g, Carbs: {{ recipe.nutrition.carbs }}g, Calories: {{ recipe.nutrition.calories }}</p>
+                    <p>{{ nutrients.name }}: {{ nutrients.amount }} {{ nutrients.unit }}</p>
+                </li>
             </li>
         </ul>
     </div>
