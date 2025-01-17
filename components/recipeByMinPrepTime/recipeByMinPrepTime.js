@@ -1,4 +1,5 @@
-const apiKey7 = 'd3476fe6c2644d64ba5f7973ed2fb875';
+// const apiKey7 = 'd3476fe6c2644d64ba5f7973ed2fb875';
+const apiKey7 ='bf2d548141f94d67bcc99b158ade286a'
 
 angular.module('prepTime', [])
 .component('prepTime', {
