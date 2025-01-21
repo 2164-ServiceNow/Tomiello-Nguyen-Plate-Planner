@@ -1,0 +1,28 @@
+<h1>Random Recipe Generator</h1>
+
+<div>
+    <label for="dishType">Select Meal Type:</label>
+    <select id="dishType" ng-model="selectedDishType" ng-options="dish for dish in dishTypes">
+        <option value="">Any Dish Type</option>
+    </select>
+</div>
+
+<button ng-click="getRandomRecipe()">Get Random Recipe</button>
+
+<div ng-if="recipe">
+    <h2>{{ recipe.title }}</h2>
+    <img ng-src="{{ recipe.image }}" alt="{{ recipe.title }}"/>
+    <p><strong>Ready in:</strong> {{ recipe.readyInMinutes }} minutes</p>
+    <p><strong>Servings:</strong> {{ recipe.servings }}</p>
+    <p><h3>Instructions:</h3> {{ recipe.instructions }}</p>
+
+    <div ng-if="recipe.nutrition">
+        <h3>Nutrition Facts:</h3>
+        <ul>
+            <li>Calories: {{ recipe.nutrition.nutrients[0].amount }} {{ recipe.nutrition.nutrients[0].unit }}</li>
+            <li>Protein: {{ recipe.nutrition.nutrients[1].amount }} {{ recipe.nutrition.nutrients[1].unit }}</li>
+            <li>Fat: {{ recipe.nutrition.nutrients[2].amount }} {{ recipe.nutrition.nutrients[2].unit }}</li>
+            <li>Carbs: {{ recipe.nutrition.nutrients[3].amount }} {{ recipe.nutrition.nutrients[3].unit }}</li>
+        </ul>
+    </div>
+</div>
