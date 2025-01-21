@@ -8,7 +8,8 @@ angular.module('platePlanner', [
     'recipeByCusines',
     'recipeShoppingList',
     'prepTime',
-    'recipeByNutritionalGoals'
+    'recipeByNutritionalGoals',
+    'recipeInfo'
   ])
   .config(function($locationProvider, $routeProvider) {
     $routeProvider
@@ -36,6 +37,9 @@ angular.module('platePlanner', [
     .when("/recipeByNutritionalGoals",{
         templateUrl : "pages/nutritionalGoals.html"
     })
+    .when("/recipeInfo",{
+      templateUrl : "pages/recipeInfo.html"
+  })
 
     
       $locationProvider.html5Mode({
