@@ -21,7 +21,9 @@
 
 <!-- Display recipe information if available -->
 <div ng-if="recipe">
-    <h2>{{ recipe.title }}</h2>
+    <h3>
+        <a ng-href="{{ recipe.sourceUrl }}" target="_blank">{{ recipe.title }}</a>
+    </h3>  
     <img ng-src="{{ recipe.image }}" alt="{{ recipe.title }}"/>
     <p><strong>Ready in:</strong> {{ recipe.readyInMinutes }} minutes</p>
     <p><strong>Servings:</strong> {{ recipe.servings }}</p>
