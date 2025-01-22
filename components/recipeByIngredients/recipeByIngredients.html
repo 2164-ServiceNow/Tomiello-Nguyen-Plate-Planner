@@ -1,7 +1,9 @@
-<div>
+<link rel="stylesheet" href="components/recipeByIngredients/recipeByIngredients.css">
+
+<div class="ingredients-container">
     <p>Search Results:</p>
-    <ul>
-        <li ng-repeat="ingredient in ingredients">
+    <ul class="ingredients-list">
+        <li ng-repeat="ingredient in ingredients" class="ingredient-item">
             <label>
                 <input type="checkbox" ng-click="toggleIngredientSelection(ingredient)">
                 {{ ingredient.name }}
@@ -10,22 +12,22 @@
     </ul>
 
     <p>Selected Ingredients:</p>
-    <ul>
-        <li ng-repeat="selectedIngredient in selectedIngredients">
+    <ul class="selected-ingredients-list">
+        <li ng-repeat="selectedIngredient in selectedIngredients" class="selected-ingredient-item">
             {{ selectedIngredient.name }}
         </li>
     </ul>
-    <button ng-click="handleGenRecipeClick()">Generate Recipes with these Ingredients</button>
+
+    <button class="generate-recipes-btn" ng-click="handleGenRecipeClick()">Generate Recipes with these Ingredients</button>
 
     <h2>Recipes:</h2>
- 
-    <ul>
-        <li ng-repeat="recipe in recipeInfoList">
-            
+    <ul class="recipes-list">
+        <li ng-repeat="recipe in recipeInfoList" class="recipe-item">
             <h3>
                 <a ng-href="{{ recipe.sourceUrl }}" target="_blank">{{ recipe.title }}</a>
             </h3>            
-            <img ng-src="{{ recipe.image }}" alt="{{ recipe.title }}">
+            <img ng-src="{{ recipe.image }}" alt="{{ recipe.title }}" class="recipe-image">
         </li>
     </ul>
 </div>
+
