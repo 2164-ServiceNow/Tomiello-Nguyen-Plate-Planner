@@ -1,0 +1,104 @@
+/* General container styles */
+.nutrition-form-container,
+.recipe-container {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    font-family: Arial, sans-serif;
+}
+
+/* Form Heading */
+.nutrition-form-container h2 {
+    font-size: 24px;
+    color: #08582c;
+    margin-bottom: 20px;
+}
+
+/* Form group */
+.form-group {
+    margin-bottom: 15px;
+    margin-right: 600px;
+}
+
+label {
+    display: block;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Search button */
+.search-btn {
+    background-color: #4caf50;
+    color: white;
+    font-size: 16px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-btn:hover {
+    background-color: #3e8e41;
+}
+
+/* Recipe item styles */
+.recipe-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-title {
+    font-size: 20px;
+    color: #08582c;
+    margin: 10px 0;
+}
+
+.recipe-image {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Nutritional Information */
+.nutrition-heading {
+    font-size: 18px;
+    color: #333;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.nutrition-list {
+    list-style: none;
+    padding: 0;
+}
+
+.nutrition-item p {
+    font-size: 14px;
+    color: #333;
+    margin: 5px 0;
+}
+
+/* No recipes message */
+.no-recipes {
+    text-align: center;
+    font-size: 18px;
+    color: #ff0000;
+    margin-top: 20px;
+}

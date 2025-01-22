@@ -1,63 +1,67 @@
+<link rel="stylesheet" href="components\recipeByNutritionalGoals\recipeByNutritionalGoals.css">
 
 
-<!-- Input form for nutritional goals -->
-    <form ng-submit="searchRecipes()">
-        <!-- Protein -->
-        <label for="minProtein">Amount of Protein Wanted in grams:</label>
-        <input type="number" id="minProtein" ng-model="minProtein" placeholder="Amount of Protein Wanted in recipe">
-
-        <!-- Fat -->
-        <label for="maxFat">Max Amount of Fat in grams:</label>
-        <input type="number" id="maxFat" ng-model="maxFat" placeholder="Max Amount of Fat in recipe">
-
-        <!-- Min Carbs -->
-        <label for="minCarbs">Min Amount of Carbs Wanted in grams:</label>
-        <input type="number" id="minCarbs" ng-model="minCarbs" placeholder="Min Amount of Carbs Wanted in recipe">
-
-        <!-- Max Carbs -->
-        <label for="maxCarbs">Max Amount of Carbs Wanted in grams:</label>
-        <input type="number" id="maxCarbs" ng-model="maxCarbs" placeholder="Max Amount of Carbs Wanted in recipe">
-
-        <!-- Calories -->
-        <label for="maxCalories">Max Amount of Calories:</label>
-        <input type="number" id="maxCalories" ng-model="maxCalories" placeholder="Max Amount of Calories in recipe">
-
-        <!-- Fiber -->
-        <label for="minFiber">Min Amount of Fiber Wanted in grams:</label>
-        <input type="number" id="minFiber" ng-model="minFiber" placeholder="Min Amount of Fiber Wanted in recipe">
-
-        <!-- Sugar -->
-        <label for="maxSugar">Max Amount of Sugar in grams:</label>
-        <input type="number" id="maxSugar" ng-model="maxSugar" placeholder="Max Amount of Sugar in recipe">
-
-        <!-- Sodium -->
-        <label for="maxSodium">Max Amount of Sodium in milligrams:</label>
-        <input type="number" id="maxSodium" ng-model="maxSodium" placeholder="Max Amount of Sodium in recipe">
-
-        <!-- Cholesterol -->
-        <label for="maxCholesterol">Max Amount of Cholesterol in milligrams:</label>
-        <input type="number" id="maxCholesterol" ng-model="maxCholesterol" placeholder="Max Amount of Cholesterol in recipe">
-
-        <button type="submit">Search Recipes</button>
-    </form>
-
-    <!-- Display the recipes -->
-    <div ng-if="recipes.length > 0">
-        <h3>Found Recipes:</h3>
-        <div ng-repeat="recipe in recipes">
-            <h3>
-                <a ng-href="{{ recipe.sourceUrl }}" target="_blank">{{ recipe.title }}</a>
-            </h3> 
-            <img ng-src="{{ recipe.image }}" alt="{{ recipe.title }}">
-            <h4>Nutritional Information:</h4>
-            <ul>
-                <li ng-repeat="nutrients in recipe.nutrition.nutrients">
-                    <p>{{ nutrients.name }}: {{ nutrients.amount }} {{ nutrients.unit }}</p>
-                </li>
-            </ul>
+<!-- Nutritional Goals Form -->
+<div class="nutrition-form-container">
+    <h2>Find Recipes Based on Your Nutritional Goals</h2>
+    <form class="nutrition-form" ng-submit="searchRecipes()">
+        <div class="form-group">
+            <label for="minProtein">Protein (g):</label>
+            <input type="number" id="minProtein" ng-model="minProtein" placeholder="Amount of Protein Wanted">
         </div>
-    </div>
+        <div class="form-group">
+            <label for="maxFat">Max Fat (g):</label>
+            <input type="number" id="maxFat" ng-model="maxFat" placeholder="Max Fat Allowed">
+        </div>
+        <div class="form-group">
+            <label for="minCarbs">Min Carbs (g):</label>
+            <input type="number" id="minCarbs" ng-model="minCarbs" placeholder="Min Carbs Needed">
+        </div>
+        <div class="form-group">
+            <label for="maxCarbs">Max Carbs (g):</label>
+            <input type="number" id="maxCarbs" ng-model="maxCarbs" placeholder="Max Carbs Allowed">
+        </div>
+        <div class="form-group">
+            <label for="maxCalories">Max Calories:</label>
+            <input type="number" id="maxCalories" ng-model="maxCalories" placeholder="Max Calories Allowed">
+        </div>
+        <div class="form-group">
+            <label for="minFiber">Min Fiber (g):</label>
+            <input type="number" id="minFiber" ng-model="minFiber" placeholder="Min Fiber Needed">
+        </div>
+        <div class="form-group">
+            <label for="maxSugar">Max Sugar (g):</label>
+            <input type="number" id="maxSugar" ng-model="maxSugar" placeholder="Max Sugar Allowed">
+        </div>
+        <div class="form-group">
+            <label for="maxSodium">Max Sodium (mg):</label>
+            <input type="number" id="maxSodium" ng-model="maxSodium" placeholder="Max Sodium Allowed">
+        </div>
+        <div class="form-group">
+            <label for="maxCholesterol">Max Cholesterol (mg):</label>
+            <input type="number" id="maxCholesterol" ng-model="maxCholesterol" placeholder="Max Cholesterol Allowed">
+        </div>
+        <button class="search-btn" type="submit">Search Recipes</button>
+    </form>
+</div>
 
-    <div ng-if="recipes.length === 0">
-        <h3>Sorry, no recipes found</h3>
+<!-- Recipe Display Section -->
+<div class="recipe-container" ng-if="recipes.length > 0">
+    <h2>Found Recipes</h2>
+    <div class="recipe-item" ng-repeat="recipe in recipes">
+        <h3 class="recipe-title">
+            <a ng-href="{{ recipe.sourceUrl }}" target="_blank">{{ recipe.title }}</a>
+        </h3>
+        <img class="recipe-image" ng-src="{{ recipe.image }}" alt="{{ recipe.title }}">
+        <h4 class="nutrition-heading">Nutritional Information</h4>
+        <ul class="nutrition-list">
+            <li class="nutrition-item" ng-repeat="nutrients in recipe.nutrition.nutrients">
+                <p>{{ nutrients.name }}: {{ nutrients.amount }} {{ nutrients.unit }}</p>
+            </li>
+        </ul>
     </div>
+</div>
+
+<div class="no-recipes" ng-if="recipes.length === 0">
+    <h3>Sorry, no recipes found.</h3>
+</div>
