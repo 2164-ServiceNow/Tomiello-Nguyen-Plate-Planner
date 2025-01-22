@@ -1,9 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+    <title>Recipe Details</title>
 </head>
 <body>
-    <p>detail recipe</p>
+    <div>
+        <h1>Recipe Details</h1>
+        
+        <div ng-if="recipeDetails.id">
+            <h2>{{ recipeDetails.title }}</h2>
+            <img ng-src="{{ recipeDetails.image }}" alt="{{ recipeDetails.title }}">
+            
+            <h3>Ingredients</h3>
+            <ul>
+                <li ng-repeat="ingredient in recipeDetails.extendedIngredients">
+                    {{ ingredient.original }}
+                </li>
+            </ul>
+            
+            <h3>Preparation Steps</h3>
+            <ol>
+                <li ng-repeat="step in recipeDetails.analyzedInstructions[0].steps">
+                    {{ step.step }}
+                </li>
+            </ol>
+            
+            <h3>Nutritional Information</h3>
+            <ul>
+                <li ng-repeat="nutrient in recipeDetails.nutrition.nutrients">
+                    {{ nutrient.name }}: {{ nutrient.amount }} {{ nutrient.unit }}
+                </li>
+            </ul>
+        </div>
+
+        <div ng-if="!recipeDetails.id">
+            <p>No recipe details available. Search for a recipe using the search bar.</p>
+        </div>
+    </div>
 </body>
 </html>

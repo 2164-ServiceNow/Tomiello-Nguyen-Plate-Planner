@@ -9,6 +9,7 @@ angular.module('platePlanner', [
     'recipeShoppingList',
     'prepTime',
     'recipeByNutritionalGoals',
+    'recipeInfo',
     'randomRecipe'
   ])
   .config(function($locationProvider, $routeProvider) {
@@ -36,6 +37,10 @@ angular.module('platePlanner', [
     })
     .when("/recipeByNutritionalGoals",{
         templateUrl : "pages/nutritionalGoals.html"
+    })
+    .when("/recipeInfo",{
+      templateUrl : "pages/recipeInfo.html"
+  })
     })
     .when("/randomRecipe",{
         templateUrl : "pages/random.html"
