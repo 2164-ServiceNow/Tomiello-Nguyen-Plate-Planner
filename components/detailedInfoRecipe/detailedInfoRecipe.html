@@ -2,38 +2,39 @@
 <html lang="en">
 <head>
     <title>Recipe Details</title>
+    <link rel="stylesheet" href="components/detailedInfoRecipe/detailedInfoRecipe.css">
 </head>
 <body>
-    <div>
+    <div class="recipe-details-container">
         <h1>Recipe Details</h1>
         
-        <div ng-if="recipeDetails.id">
-            <h2>{{ recipeDetails.title }}</h2>
-            <img ng-src="{{ recipeDetails.image }}" alt="{{ recipeDetails.title }}">
+        <div ng-if="recipeDetails.id" class="recipe-details-content">
+            <h2 class="recipe-title">{{ recipeDetails.title }}</h2>
+            <img ng-src="{{ recipeDetails.image }}" alt="{{ recipeDetails.title }}" class="recipe-image">
             
             <h3>Ingredients</h3>
-            <ul>
+            <ul class="ingredients-list">
                 <li ng-repeat="ingredient in recipeDetails.extendedIngredients">
                     {{ ingredient.original }}
                 </li>
             </ul>
             
             <h3>Preparation Steps</h3>
-            <ol>
+            <ol class="steps-list">
                 <li ng-repeat="step in recipeDetails.analyzedInstructions[0].steps">
                     {{ step.step }}
                 </li>
             </ol>
             
             <h3>Nutritional Information</h3>
-            <ul>
+            <ul class="nutrition-list">
                 <li ng-repeat="nutrient in recipeDetails.nutrition.nutrients">
                     {{ nutrient.name }}: {{ nutrient.amount }} {{ nutrient.unit }}
                 </li>
             </ul>
         </div>
 
-        <div ng-if="!recipeDetails.id">
+        <div ng-if="!recipeDetails.id" class="no-recipe">
             <p>No recipe details available. Search for a recipe using the search bar.</p>
         </div>
     </div>
