@@ -1,26 +1,29 @@
-<div>
+<link rel="stylesheet" href="components/recipeByMinPrepTime/recipeByMinPrepTime.css">
+
+<div class="prep-time-container">
     <h1>Find Meals by Prep Time</h1>
 
-    <form ng-submit="handleTimeSearch()">
-        <label for="times">Choose a max time:</label>
-        <select id="times" name="times" ng-model="selectedTime">
+    <form ng-submit="handleTimeSearch()" class="prep-time-form">
+        <label for="times" class="prep-time-label">Choose a max time:</label>
+        <select id="times" name="times" ng-model="selectedTime" class="prep-time-dropdown">
             <option value="">-- Select a Time --</option>
-            <option value="15">15</option>
-            <option value="30">30</option>
-            <option value="45">45</option>
-            <option value="60">60</option>
-            <option value="90">90</option>
-            <option value="120">120</option>
+            <option value="15">15 Minutes</option>
+            <option value="30">30 Minutes</option>
+            <option value="45">45 Minutes</option>
+            <option value="60">1 Hour</option>
+            <option value="90">1.5 Hours</option>
+            <option value="120">2 Hours</option>
         </select>
-        <button type="submit">Search Recipes</button>
+        <button type="submit" class="search-btn">Search Recipes</button>
     </form>
-    <div ng-if="listedRecipes.length > 0">
+
+    <div ng-if="listedRecipes.length > 0" class="recipes-container">
         <h2>Recipes:</h2>
-        <div ng-repeat="recipe in listedRecipes">
+        <div ng-repeat="recipe in listedRecipes" class="recipe-item">
             <h3>
                 <a ng-href="{{ recipe.sourceUrl }}" target="_blank">{{ recipe.title }}</a>
             </h3>        
-            <img ng-src="{{ recipe.image }}" alt="{{ recipe.title }}">
+            <img ng-src="{{ recipe.image }}" alt="{{ recipe.title }}" class="recipe-image">
         </div>
     </div>
 </div>
