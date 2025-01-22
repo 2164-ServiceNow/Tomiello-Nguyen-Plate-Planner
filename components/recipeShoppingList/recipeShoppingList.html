@@ -1,22 +1,37 @@
-<ul>
-    <li ng-repeat="recipe in recipes">
-        <input type="checkbox" ng-model="recipe.selected" ng-change="handleRecipeClick()">
-        <h3>
-            <a ng-href="{{ recipe.sourceUrl }}" target="_blank">{{ recipe.title }}</a>
-        </h3>            
-        <img ng-src="{{ recipe.image }}" alt="{{ recipe.title }}">
-    </li>
-</ul>
+<link rel="stylesheet" href="components\recipeShoppingList\recipeShoppingList.css">
 
-
-<div ng-if="shoppingList.length > 0">
-    <h3><u>Shopping List:</u></h3>
-    <ul>
-        <li ng-repeat="ingredient in shoppingList">
-            <h3>{{ ingredient.name }} ({{ ingredient.amount.us.value}} {{ ingredient.amount.us.unit}})
-                : ${{ ingredient.price }}</h3>
-        </li>   
+<div class="recipe-container">
+    <h1>Select Recipes</h1>
+    <ul class="recipe-list">
+        <li ng-repeat="recipe in recipes" class="recipe-item">
+            <div class="checkbox-container">
+                <input 
+                    type="checkbox" 
+                    ng-model="recipe.selected" 
+                    ng-change="handleRecipeClick()" 
+                    class="styled-checkbox">
+                <span class="checkbox-label">Include in Shopping List</span>
+            </div>
+            <h3>
+                <a ng-href="{{ recipe.sourceUrl }}" target="_blank">{{ recipe.title }}</a>
+            </h3>
+            <img ng-src="{{ recipe.image }}" alt="{{ recipe.title }}" class="recipe-image">
+        </li>
     </ul>
-    <h3 ng-if="totalCost">Total Cost: ${{ totalCost }}</h3>
 </div>
 
+<div ng-if="shoppingList.length > 0" class="shopping-container">
+    <h2>Your Shopping List</h2>
+    <ul class="shopping-list">
+        <li ng-repeat="ingredient in shoppingList" class="shopping-item">
+            <div class="ingredient-details">
+                <h3 class="ingredient-name">{{ ingredient.name }}</h3>
+                <p class="ingredient-info">
+                    Quantity: {{ ingredient.amount.us.value }} {{ ingredient.amount.us.unit }}
+                </p>
+                <p class="ingredient-price">Price: ${{ ingredient.price }}</p>
+            </div>
+        </li>
+    </ul>
+    <h3 ng-if="totalCost" class="total-cost">Total Cost: ${{ totalCost }}</h3>
+</div>

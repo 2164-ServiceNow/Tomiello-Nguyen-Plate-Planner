@@ -1,0 +1,130 @@
+/* Recipe container styles */
+.recipe-container {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    font-family: Arial, sans-serif;
+}
+
+/* Recipe list styles */
+.recipe-list {
+    list-style: none;
+    padding: 0;
+}
+
+.recipe-item {
+    margin-bottom: 20px;
+}
+
+/* Checkbox container */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.styled-checkbox {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #4caf50;
+    border-radius: 3px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.styled-checkbox:checked {
+    background-color: #4caf50;
+    border-color: #4caf50;
+}
+
+.checkbox-label {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Recipe image and title */
+.recipe-item h3 {
+    font-size: 18px;
+    color: #08582c;
+    margin: 10px 0;
+}
+
+.recipe-image {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Shopping container styles */
+.shopping-container {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    font-family: Arial, sans-serif;
+    text-align: center; /* Center-align the content */
+}
+
+/* Shopping container heading */
+.shopping-container h2 {
+    font-size: 28px;
+    color: #08582c;
+    margin-bottom: 20px;
+}
+
+/* Shopping list styles */
+.shopping-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Shopping item styling */
+.shopping-item {
+    margin-bottom: 15px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Align item details to the left */
+}
+
+/* Ingredient details */
+.ingredient-details {
+    margin-bottom: 10px;
+}
+
+.ingredient-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #08582c;
+    margin-bottom: 5px;
+}
+
+.ingredient-info {
+    font-size: 16px;
+    color: #333;
+}
+
+.ingredient-price {
+    font-size: 16px;
+    color: #4caf50;
+    font-weight: bold;
+}
+
+/* Total cost */
+.total-cost {
+    font-size: 20px;
+    font-weight: bold;
+    color: #08582c;
+    margin-top: 20px;
+}
