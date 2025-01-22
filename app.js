@@ -40,7 +40,6 @@ angular.module('platePlanner', [
     })
     .when("/recipeInfo",{
       templateUrl : "pages/recipeInfo.html"
-  })
     })
     .when("/randomRecipe",{
         templateUrl : "pages/random.html"
