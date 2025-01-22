@@ -17,9 +17,6 @@ angular.module('platePlanner', [
     .when("/", {
       templateUrl: "pages/home.html"
     })
-    // .when("/detailedInfoRecipe",{
-    //     templateUrl: "components/detailedInfoRecipe/detailedInfRecipe.html"
-    // })
     .when("/recipeByIngredients",{
         templateUrl: "pages/ingredients.html"
     })
@@ -43,6 +40,9 @@ angular.module('platePlanner', [
     })
     .when("/randomRecipe",{
         templateUrl : "pages/random.html"
+    })
+    .otherwise({ 
+      redirectTo: "/"
     })
 
     
