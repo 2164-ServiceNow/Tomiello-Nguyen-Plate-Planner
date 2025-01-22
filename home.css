@@ -1,0 +1,45 @@
+/* Container for the landing page */
+.landing-container {
+    text-align: center; /* Center-align content */
+    padding: 50px 20px; /* Add spacing */
+    background-color: #f0f9f4; /* Soft green background */
+    color: #333; /* Dark text color for readability */
+    font-family: 'Arial', sans-serif;
+}
+
+/* Welcome message styling */
+.landing-container h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #08582c; /* Dark green for emphasis */
+}
+
+/* Paragraph styling */
+.landing-container p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+/* Images container */
+.landing-images {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Add space between images */
+    flex-wrap: wrap; /* Wrap images to the next line if needed */
+}
+
+/* Image styling */
+.landing-images img {
+    width: 350px; /* Set image width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease; /* Add hover animation */
+}
+
+/* Hover effect for images */
+.landing-images img:hover {
+    transform: scale(1.2); /* Slight zoom on hover */
+}

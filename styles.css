@@ -12,6 +12,6 @@ html, body {
 
 /* Add styles for main container if needed */
 .ng-view {
-    padding: 20px; /* Add spacing around your content */
-    min-height: calc(100vh - 60px); /* Ensures the content fills the viewport */
+    padding: 20px; 
+    min-height: calc(100vh - 60px); 
 }
