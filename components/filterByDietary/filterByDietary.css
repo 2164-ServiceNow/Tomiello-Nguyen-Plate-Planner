@@ -1,0 +1,79 @@
+.diet-container {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    max-width: 800px;
+    text-align: center; 
+    font-family: Arial, sans-serif;
+}
+
+.diet-container h1 {
+    font-size: 28px;
+    color: #08582c;
+    margin-bottom: 20px;
+}
+
+.diet-label {
+    font-size: 16px;
+    color: #333; 
+    margin-bottom: 10px;
+    display: block;
+}
+
+.diet-dropdown {
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+    border: 2px solid #4caf50; 
+    border-radius: 5px;
+    background-color: #f9f9f9; 
+    margin-bottom: 20px; 
+    transition: border-color 0.3s;
+    width: 100%; 
+}
+
+.diet-dropdown:hover,
+.diet-dropdown:focus {
+    border-color: #388e3c; 
+    outline: none;
+}
+
+.search-btn {
+    background-color: #4caf50; 
+    color: #fff; 
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+    background-color: #388e3c; 
+}
+
+.recipes-container {
+    margin-top: 30px;
+    text-align: left; 
+}
+
+.recipe-item {
+    margin-bottom: 20px;
+}
+
+.recipe-item h3 {
+    font-size: 18px;
+    color: #08582c;
+    margin-bottom: 10px;
+}
+
+.recipe-image {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    margin-top: 10px;
+}

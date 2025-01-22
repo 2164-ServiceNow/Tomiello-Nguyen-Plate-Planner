@@ -1,11 +1,15 @@
-<div>
+<link rel="stylesheet" href="components\filterByDietary\filterByDietary.css">
+
+
+<div class="diet-container">
     <h1>Filter Recipes by Diet</h1>
-    
-    <!-- Dietary Preferences Dropdown -->
-    <label for="diet">Choose your diet preference:</label>
-    <select id="diet" ng-model="selectedDiet" ng-change="searchRecipes()">
+
+    <!-- Dropdown for selecting diet -->
+    <label for="diet" class="diet-label">Choose your diet preference:</label>
+    <select id="diet" name="diet" ng-model="selectedDiet" class="diet-dropdown" ng-change="searchRecipes()">
+        <option value="">-- Select a Diet --</option>
         <option value="Gluten Free">Gluten Free</option>
-        <option value="Ketogenic">Keto</option>
+        <option value="Ketogenic">Ketogenic</option>
         <option value="Vegetarian">Vegetarian</option>
         <option value="Lacto-Vegetarian">Lacto-Vegetarian</option>
         <option value="Ovo-Vegetarian">Ovo-Vegetarian</option>
@@ -16,15 +20,14 @@
         <option value="Whole30">Whole30</option>
     </select>
 
-    <!-- Display the recipes -->
-    <div ng-if="recipes.length > 0">
-        <ul>
-            <li ng-repeat="recipe in recipes">
-                <h3>
-                    <a ng-href="{{ recipe.sourceUrl }}" target="_blank">{{ recipe.title }}</a>
-                </h3>  
-                <img ng-src="{{ recipe.image }}" alt="{{ recipe.title }}">
-            </li>
-        </ul>
+    <!-- Recipe Results -->
+    <div ng-if="recipes.length > 0" class="recipes-container">
+        <h2>Recipes:</h2>
+        <div ng-repeat="recipe in recipes" class="recipe-item">
+            <h3>
+                <a ng-href="{{ recipe.sourceUrl }}" target="_blank">{{ recipe.title }}</a>
+            </h3>
+            <img ng-src="{{ recipe.image }}" alt="{{ recipe.title }}" class="recipe-image">
+        </div>
     </div>
 </div>
