@@ -1,0 +1,81 @@
+/* Search bar container */
+.search-bar-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #08582c; /* Light green background */
+    padding: 10px 20px;
+    border-top: 2px solid #08582c; /* Green border for separation */
+    border-bottom: 2px solid #08582c; /* Matches the navbar */
+    width: 100%; /* Spans the entire width */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Input field */
+.search-bar-container input {
+    flex: 1; /* Expands to take up available space */
+    padding: 12px 15px;
+    border: 2px solid #4caf50; /* Green border */
+    border-right: none; /* No border between input and button */
+    border-radius: 4px 0 0 4px; /* Rounded left corners */
+    font-size: 16px;
+    outline: none;
+    color: #333; /* Dark gray text */
+    background-color: #fff; /* White background for contrast */
+    transition: border-color 0.3s ease;
+}
+
+/* Focus effect for input */
+.search-bar-container input:focus {
+    border-color: #388e3c; /* Slightly darker green */
+    box-shadow: 0 0 5px rgba(56, 142, 60, 0.3);
+}
+
+/* Styling for the label */
+.search-bar-container label {
+    color: #ffffff; /* White text color */
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 10px; /* Add spacing between label and input */
+}
+
+/* Styling for the placeholder text */
+.search-bar-container input::placeholder {
+    color: #a0d6b4; /* Light green placeholder */
+    font-style: italic; /* Optional: Make it italic */
+}
+
+
+/* Search button */
+.search-bar-container button {
+    padding: 12px 20px;
+    border: 2px solid #4caf50; /* Green border */
+    border-radius: 0 4px 4px 0; /* Rounded right corners */
+    background-color: #4caf50; /* Green background */
+    color: #fff; /* White text */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect for the button */
+.search-bar-container button:hover {
+    background-color: #388e3c; /* Slightly darker green */
+}
+
+/* Ensure the search bar adapts to smaller screens */
+@media (max-width: 768px) {
+    .search-bar-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-bar-container input,
+    .search-bar-container button {
+        border-radius: 4px; /* Unified rounded corners */
+        margin-bottom: 10px;
+        border-right: 2px solid #4caf50; /* Restore border for stacked layout */
+    }
+}

@@ -1,3 +1,8 @@
-<label for="search">Search: </label>
-<input ng-model="searchValue"/>
-<button ng-click="search()">Search</button>
+<link rel="stylesheet" href="components/searchBar/searchBar.css">
+
+<div class="search-bar-container">
+    <label for="search">Search: </label>
+    <input id="search" ng-model="searchValue" placeholder="Search for recipes or ingredients here..."/>
+    <button ng-click="search()">Search</button>
+</div>
+
