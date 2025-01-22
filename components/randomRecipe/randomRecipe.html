@@ -1,0 +1,47 @@
+<h1>Random Recipe Generator</h1>
+
+<!-- <div>
+    <label for="dishType">Select Meal Type:</label>
+    <select id="dishType" ng-model="selectedDishType" ng-change="searchRandomRecipes()">
+        <option value="">Any Dish Type</option>
+        <option value="Breakfast">Breakfast</option>
+        <option value="Appetizer">Appetizer</option>
+        <option value="Main Course">Main Course</option>
+        <option value="Snack">Snack</option>
+        <option value="Dessert">Dessert</option>
+        <option value="Soup">Soup</option>
+        <option value="Bread">Bread</option>
+        <option value="Salad">Salad</option>
+        <option value="Side Dish">Side Dish</option>
+    </select>
+</div> -->
+
+<!-- Button to fetch a random recipe -->
+<button ng-click="searchRandomRecipes()">Get Random Recipe</button>
+
+<!-- Display recipe information if available -->
+<div ng-if="recipe">
+    <h2>{{ recipe.title }}</h2>
+    <img ng-src="{{ recipe.image }}" alt="{{ recipe.title }}"/>
+    <p><strong>Ready in:</strong> {{ recipe.readyInMinutes }} minutes</p>
+    <p><strong>Servings:</strong> {{ recipe.servings }}</p>
+
+    <h3>Instructions:</h3>
+    <div ng-if="recipe.analyzedInstructions && recipe.analyzedInstructions.length > 0">
+        <ul>
+            <li ng-repeat="instruction in recipe.analyzedInstructions[0].steps">
+                <h4>Step {{ $index + 1 }}: {{ instruction.step }} </h4>
+            </li>
+        </ul>
+    </div>
+
+    <div ng-if="recipe.nutrition">
+        <h3>Nutrition Facts:</h3>
+        <ul>
+            <li>Calories: {{ recipe.nutrition.nutrients[0].amount }} {{ recipe.nutrition.nutrients[0].unit }}</li>
+            <li>Protein: {{ recipe.nutrition.nutrients[1].amount }} {{ recipe.nutrition.nutrients[1].unit }}</li>
+            <li>Fat: {{ recipe.nutrition.nutrients[2].amount }} {{ recipe.nutrition.nutrients[2].unit }}</li>
+            <li>Carbs: {{ recipe.nutrition.nutrients[3].amount }} {{ recipe.nutrition.nutrients[3].unit }}</li>
+        </ul>
+    </div>
+</div>
