@@ -9,10 +9,21 @@ angular.module('filterByDietary', [])
         $scope.selectedDiet = 'Vegan';  // Default diet preference
         $scope.recipes = [];
 
+        $scope.newQuery = ''
+
+        $scope.$watch(function () {
+            return searchBarService.getQuery()
+        },
+        function (newQuery) {
+            if (newQuery) {    
+                $scope.newQuery = newQuery
+            }
+        });
+
         $scope.searchRecipes = function() {
             const dietParam = $scope.selectedDiet;
 
-            $http.get(`https://api.spoonacular.com/recipes/complexSearch?diet=${dietParam}&number=4&addRecipeInformation=true&apiKey=${apiKey2}`)
+            $http.get(`https://api.spoonacular.com/recipes/complexSearch?query=${$scope.newQuery}&diet=${dietParam}&number=4&addRecipeInformation=true&apiKey=${apiKey2}`)
                 .then((response) => {
                     $scope.recipes = response.data.results
                 })
