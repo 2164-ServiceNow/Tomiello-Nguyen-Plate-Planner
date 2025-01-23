@@ -1,6 +1,4 @@
-const apiKey4='d3476fe6c2644d64ba5f7973ed2fb875'
-// const apiKey4='b7fad37df2234ebdbaadb879ae6c6a61'
-//const apiKey4='bf2d548141f94d67bcc99b158ade286a'
+const apiKey4='fb4b1aafd8e9434695d2a6bb51298aad'
 
 angular.module('recipeByNutritionalGoals', [])
 
@@ -34,7 +32,7 @@ angular.module('recipeByNutritionalGoals', [])
         // Function to handle form submission and search for recipes
         $scope.searchRecipes = function() {
             // Construct the API URL with user input
-            let apiUrl = `https://api.spoonacular.com/recipes/complexSearch?query=${$scope.newQuery}&addRecipeInformation=true&apiKey=${apiKey4}&number=1`;
+            let apiUrl = `https://api.spoonacular.com/recipes/complexSearch?query=${$scope.newQuery}&addRecipeInformation=true&apiKey=${apiKey4}&number=4`;
 
             // clearing old results
             $scope.recipes = [];

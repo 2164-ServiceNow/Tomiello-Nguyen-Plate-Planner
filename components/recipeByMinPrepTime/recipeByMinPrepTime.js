@@ -1,5 +1,4 @@
- const apiKey7 = 'd3476fe6c2644d64ba5f7973ed2fb875';
-//const apiKey7 ='bf2d548141f94d67bcc99b158ade286a'
+ const apiKey7 = 'bf2d548141f94d67bcc99b158ade286a';
 
 angular.module('prepTime', [])
 .component('prepTime', {
@@ -27,7 +26,7 @@ angular.module('prepTime', [])
         $scope.handleTimeSearch = function() {
             const maxTime = parseInt($scope.selectedTime, 10); //convert to int
         
-            $http.get(`https://api.spoonacular.com/recipes/complexSearch?query=${$scope.newQuery}&maxReadyTime=${maxTime}&number=1&addRecipeInformation=true&apiKey=${apiKey7}`)
+            $http.get(`https://api.spoonacular.com/recipes/complexSearch?query=${$scope.newQuery}&maxReadyTime=${maxTime}&number=4&addRecipeInformation=true&apiKey=${apiKey7}`)
                 .then((response) => {
                     console.log('API Response:', response.data.results);
                     $scope.listedRecipes = response.data.results.filter(function(recipe) {

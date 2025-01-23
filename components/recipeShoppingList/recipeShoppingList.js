@@ -1,6 +1,4 @@
-const apiKey6='d3476fe6c2644d64ba5f7973ed2fb875'
-//const apiKey6='b7fad37df2234ebdbaadb879ae6c6a61'
-//const apiKey6='bf2d548141f94d67bcc99b158ade286a'
+const apiKey6='fb4b1aafd8e9434695d2a6bb51298aad'
 
 angular.module('recipeShoppingList', [])
 

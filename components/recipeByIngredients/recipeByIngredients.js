@@ -1,4 +1,3 @@
-3//const apiKey='b7fad37df2234ebdbaadb879ae6c6a61'
 const apiKey='bf2d548141f94d67bcc99b158ade286a'
 
 
@@ -67,7 +66,7 @@ angular.module('recipeByIngredients', [])
            
             // Make the API call to fetch recipes
             
-            $http.get(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredientsList}&number=1&apiKey=${apiKey}`) //number is hm is displayed
+            $http.get(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredientsList}&number=4&apiKey=${apiKey}`) //number is hm is displayed
                 .then((response) => {
                     // Store the recipes in the scope
                     $scope.listRecipes = response.data;

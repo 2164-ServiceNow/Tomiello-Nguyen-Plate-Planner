@@ -1,4 +1,4 @@
-const apiKey3 = 'd3476fe6c2644d64ba5f7973ed2fb875';
+const apiKey3 = 'b7fad37df2234ebdbaadb879ae6c6a61';
 
 angular.module('recipeInfo', [])
 .component('recipeInfo', {
